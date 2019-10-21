@@ -6,16 +6,16 @@ int main()
 {
 	srand(time(NULL));
 	// 2.3 point
-	//int k, m, s=0;
-	//cout << "Write numbers k and m : ";
-	//cin >> k >> m;
-	//for (int i = 1; i <= 100; i++)
-	//{
-	//	if ((i > k) && (i < m))
-	//		continue;
-	//	s += i;
-	//}
-	//cout << "S = " << s << endl;
+	int k, m, s=0;
+	cout << "Write numbers k and m : ";
+	cin >> k >> m;
+	for (int i = 1; i <= 100; i++)
+	{
+		if ((i > k) && (i < m))
+			continue;
+		s += i;
+	}
+	cout << "S = " << s << endl;
 
 	// 2.4 point
 	int x, y, R, points = 0, i;
