@@ -5,10 +5,11 @@
 using namespace std;
 
 void privet(string);
-
+void privet(string name, int k);
+void privet(int a);
 int main()
 {
-	////1.1 point
+	//1.1 point
 	SetConsoleOutputCP(1251);
 	SetConsoleCP(1251);
 	string name;
@@ -39,11 +40,33 @@ int main()
 
 	S = sqrt(p1 * (p1 - a) * (p1 - e) * (p1 - f)) + sqrt(p2 * (p2 - f) * (p2 - u) * (p2 - d)) + sqrt(p3 * (p3 - u) * (p3 - b) * (p3 - c));
 	cout << "S = " << S << endl;
+	// 1.3 point
+	int k;
+	cout << "Введите Ваше любимое число" << endl;
+	cin >> k;
+	privet(name);
+	privet(name, k);
 
+	// 1.4 point
+	privet(k);
 	return 0;
 }
 
 void privet(string name)
 {
 	cout << name << ", " << "здравствуйте!" << endl;
+}
+
+void privet(string name, int k)
+{
+	cout << name << " " << ", еще раз" << " здравствуйте! "
+		<< "Вы ввели " << k << endl;
+}
+
+void privet(int a) {
+	int p;
+	p = 3 * a;
+	double S;
+	S = sqrt(p * pow((p - a),3));
+	cout << "S = " << S << endl;
 }
