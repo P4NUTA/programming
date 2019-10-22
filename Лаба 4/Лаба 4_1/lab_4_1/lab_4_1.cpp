@@ -1,4 +1,5 @@
 ﻿#include <iostream>
+#include <math.h>
 
 using namespace std;
 
@@ -7,20 +8,24 @@ void fum_value(double k, double x, double y)
 	x = x + k;
 	y = y + k;
 }
+
 void fum_ptr(double k, double* x, double* y)
 {
 	*x = *x + k;
 	*y = *y + k;
 }
+
 void fum_ref(double k, double& x, double& y)
 {
 	x = x + k;
 	y = y + k;
 }
+
 void print(double x, double y)
 {
 	cout << "x = " << x << "; y = " << y << endl;
 }
+
 int Myroot(double a, double b, double c, double& x1, double& x2) {
 	//ax ^ 2 + bx + c;
 	double D;
@@ -39,7 +44,7 @@ int Myroot(double a, double b, double c, double& x1, double& x2) {
 	}
 	else {
 		cout << "-1" << endl;
-	return -1;
+		return -1;
 	}
 }
 
@@ -60,7 +65,7 @@ int main()
 	//1.2 point
 
 	double a, b, c;
-	double x1=0, x2=0;
+	double x1 = 0, x2 = 0;
 	cout << "Write a, b, c : ";
 	cin >> a >> b >> c;
 	Myroot(a, b, c, x1, x2);
