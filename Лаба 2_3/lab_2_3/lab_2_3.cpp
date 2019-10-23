@@ -9,22 +9,23 @@ int main()
 	temp = a;
 	buf_a = a;
 	buf_b = b;
-	while (temp != b)
-	{
-		a = temp;
-		if (a < b)
-		{
-			temp = a;
-			a = b;
-			b = temp;
-		}
-		temp = a - b;
-		a = b;
-	}
-	cout << "НОД = " << b << endl;
-	a = buf_a;
-	b = buf_b;
-	temp = a;
+	//while (temp != b)
+	//{
+	//	a = temp;
+	//	if (a < b)
+	//	{
+	//		temp = a;
+	//		a = b;
+	//		b = temp;
+	//	}
+	//	temp = a - b;
+	//	a = b;
+	//}
+	//cout << "НОД = " << b << endl;
+	//a = buf_a;
+	//b = buf_b;
+	//temp = a;
+
 	do
 	{
 		a = temp;
@@ -51,4 +52,3 @@ int main()
 		x = x + 0.01;
 	}
 }
-

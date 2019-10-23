@@ -6,7 +6,7 @@ int main()
 {
 	srand(time(NULL));
 	// 2.3 point
-	int k, m, s=0;
+	int k, m, s = 0;
 	cout << "Write numbers k and m : ";
 	cin >> k >> m;
 	for (int i = 1; i <= 100; i++)
@@ -18,7 +18,9 @@ int main()
 	cout << "S = " << s << endl;
 
 	// 2.4 point
-	int x, y, R, points = 0, i;
+	int x, y, points = 0, i;
+	double R;
+	cout << "You have 5 shots, good luck!" << endl;
 	for (i = 0; i < 5; i++) {
 		cout << "Write x and y: ";
 		cin >> x >> y;
@@ -36,5 +38,14 @@ int main()
 		}
 	}
 	cout << "Points : " << points << endl;
+	if (points <= 20) {
+		cout << "Your skill is low" << endl;
+	}
+	else if (points > 20 && points < 40) {
+		cout << "Your skill is mediun" << endl;
+	}
+	else {
+		cout << "You master!" << endl;
+	}
 	return 0;
 }

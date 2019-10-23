@@ -16,6 +16,7 @@ int main()
 	SetConsoleCP(1251);
 	srand(time(NULL));
 	//2 point
+	bool (*from_f[2])(int, int) = { from_min,from_max };
 	cout << "Введите размер массива" << endl;
 	int n;
 	cin >> n;
@@ -41,7 +42,6 @@ int main()
 	cout << "Исходные данные: ";
 	show_array(myArray, n);
 
-	bool (*from_f[2])(int, int) = { from_min,from_max };
 	bubble_sort(myArray, n, (from_f[my_choose - 1]));
 
 	//switch (my_choose)
