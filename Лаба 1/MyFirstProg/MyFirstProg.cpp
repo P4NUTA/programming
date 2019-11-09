@@ -14,14 +14,15 @@ int main()
 	//cout << "\nx = " << x << endl; //вывод результата на экран
 
 	// 3 point 
-	double P, S, a;
+	double P, S, a; // объявление переменных
 	cout << "Write perimeter of triangle" << endl;
 	cin >> P;
-	a = P / 3;
-	S = sqrt(P * pow(P - a, 3));
+	a = P / 3; // вычисление длины стороны
+	S = sqrt(P * pow(P - a, 3)); // вычисление площади треугольника
+	// вывод результатов на экран
 	cout << "S = " << S << endl;
 	cout << "P = " << P << endl;
 	cout << "a = " << a << endl;
 
 	return 0;
-}0
+}
