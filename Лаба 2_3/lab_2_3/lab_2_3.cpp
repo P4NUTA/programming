@@ -3,30 +3,30 @@
 using namespace std;
 int main()
 {
-	int a, b, temp, buf_a, buf_b;
-	cout << "a = "; cin >> a;
-	cout << "b = "; cin >> b;
-	temp = a;
-	buf_a = a;
-	buf_b = b;
-	//while (temp != b)
-	//{
-	//	a = temp;
-	//	if (a < b)
-	//	{
-	//		temp = a;
-	//		a = b;
-	//		b = temp;
-	//	}
-	//	temp = a - b;
-	//	a = b;
-	//}
-	//cout << "НОД = " << b << endl;
-	//a = buf_a;
-	//b = buf_b;
-	//temp = a;
+	int a, b, temp, buf_a, buf_b; // объявление переменных
+	cout << "a = "; cin >> a; // ввод с клавиатуры значения a
+	cout << "b = "; cin >> b; // ввод с клавиатуры значения b
+	temp = a; // сохранение значения a в переменную temp
+	buf_a = a; // сохранение значения a в переменную buf_a
+	buf_b = b; //сохранение значения b в переменную buf_b
+	while (temp != b) // начало цикла 
+	{
+		a = temp; // сохранение значения temp в переменную a
+		if (a < b) // проверка a меньше b
+		{
+			temp = a; // сохранение значения a в переменную temp
+			a = b; // сохранение значения b в переменную a
+			b = temp; // сохранение значения temp в переменную b
+		}
+		temp = a - b; // temp равен разности a и b 
+		a = b; // сохранение значения b в переменную a
+	}
+	cout << "НОД = " << b << endl; // вывод значения b
+	a = buf_a; // сохранение значения buf_a в переменную a 
+	b = buf_b; // сохранение значения buf_b в переменную b
+	temp = a; // сохранение значения a в переменную temp
 
-	do
+	do // начало цикла
 	{
 		a = temp;
 		if (a < b)
