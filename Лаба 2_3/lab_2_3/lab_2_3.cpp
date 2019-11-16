@@ -28,7 +28,7 @@ int main()
 
 	do // начало цикла
 	{
-		a = temp;
+		a = temp; // сохранение значения a в переменную temp
 		if (a < b)
 		{
 			temp = a;
