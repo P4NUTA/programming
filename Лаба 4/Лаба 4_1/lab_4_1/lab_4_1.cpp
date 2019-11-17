@@ -60,7 +60,7 @@ void print(double x, double y)
 @param double c - number
 @param double& x1 - root 
 @param double& x2 - root
-@return 
+@return root number
 */
 int Myroot(double a, double b, double c, double& x1, double& x2) {
 	//ax ^ 2 + bx + c;
@@ -106,6 +106,7 @@ int main()
 	double x1 = 0, x2 = 0;
 	cout << "Write a, b, c : ";
 	cin >> a >> b >> c; // ввод значений 
+	// Вызов функции
 	Myroot(a, b, c, x1, x2);
 	cout << "x1 = " << x1 << "\tx2 = " << x2 << endl;
 
