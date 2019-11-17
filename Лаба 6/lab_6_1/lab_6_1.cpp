@@ -1,22 +1,45 @@
 ﻿#include <iostream>
+#include <fstream>
 
 using namespace std;
 
 int main()
 {
+	// Объявление переменных
 	double sum = 0;
 	int const n = 100;
 	double nums[n];
+	// Ввод случайных значений в массив
 	for (int i = 0; i < n; i++)
 	{
 		nums[i] = (rand() % 100);
 	}
+	// Открытие файла
 	ofstream out("test", ios::out | ios::binary);
 	if (!out) {
 		cout << "Файл открыть невозможно\n";
 		return 1;
 	}
+	// Запись значений в файл
+	out.write((char*)nums, sizeof(nums));
+	// Закрытие файла
+	out.close();
 
+	// Открытие файла
+	ifstream in("test", ios::in | ios::binary);
+	if (!in) {
+		cout << "Файл открыть невозможно";
+		return 1;
+	}
+	in.read((char*)&nums, sizeof(nums));
+	int k = sizeof(nums) / sizeof(double);
+	for (int i = 0; i < k; i++)
+	{
+		sum = sum + nums[i];
+		cout << nums[i] << ' ';
+	}
+	cout << "\nsum = " << sum << endl;
+	in.close();
 }
 
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
