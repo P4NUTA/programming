@@ -1,49 +1,28 @@
 ﻿#include <iostream>
 #include <fstream>
-
+#include <string>
+#include <Windows.h>
 using namespace std;
 
 int main()
 {
+	SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
 	// Объявление переменных
-	double sum = 0;
-	int const n = 100;
-	double nums[n];
-	// Ввод случайных значений в массив
-	for (int i = 0; i < n; i++)
-	{
-		nums[i] = (rand() % 100);
-	}
+	string pred;
 	// Открытие файла
-	ofstream out("test", ios::out | ios::binary);
+	ofstream out("text.txt");
 	if (!out) {
 		cout << "Файл открыть невозможно\n";
 		return 1;
 	}
-	// Запись значений в файл
-	out.write((char*)nums, sizeof(nums));
+	// Запись строк в файл
+	do {
+		getline(cin, pred);
+		out << pred << endl;
+	} while (pred!="");
 	// Закрытие файла
 	out.close();
-
-	// Открытие файла
-	ifstream in("test", ios::in | ios::binary);
-	if (!in) {
-		cout << "Файл открыть невозможно";
-		return 1;
-	}
-	// Чтение файла
-	in.read((char*)&nums, sizeof(nums));
-	// Вычисление количества элементов
-	int k = sizeof(nums) / sizeof(double);
-	// Вычисление суммы элементов
-	for (int i = 0; i < k; i++)
-	{
-		sum = sum + nums[i];
-		cout << nums[i] << ' ';
-	}
-	cout << "\nsum = " << sum << endl;
-	// Закрытие файла
-	in.close();
 }
 
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
