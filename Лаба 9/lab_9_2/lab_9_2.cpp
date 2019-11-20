@@ -20,7 +20,7 @@ public:
 	{
 		// Провера ошибки
 		if (side1 > side2 + side3 || side2 > side1 + side3 || side3 > side1 + side2)
-			throw Ex(" Triangle ", side1, side2, side3);
+			throw ExScore(" Triangle ", side1, side2, side3);
 
 		s1 = side1;
 		s2 = side2;
@@ -39,14 +39,21 @@ public:
 
 		return S;
 	}
-	// 
-	class Ex
+	// Класс исключений
+	class ExScore
 	{
 	public:
-		string origin;
-		int s1, s2, s3;
+		string origin; // Имя ошибки
+		int s1, s2, s3; // Ошибочные значения
+		/*
+		Конструктор класса ExScore
 
-		Ex(string Or, int side1, int side2, int side3)
+		@param string Or - name's error
+		@param int side1 - first side of triangle
+		@param int side2 - second side of triangle
+		@param int side3 - third side of triangle
+		*/
+		ExScore(string Or, int side1, int side2, int side3)
 		{
 			origin = Or;
 			s1 = side1;
@@ -56,6 +63,9 @@ public:
 	};
 
 private:
+	/*
+	Sides of triangel
+	*/
 	int s1;
 	int s2;
 	int s3;
@@ -63,19 +73,20 @@ private:
 
 int main(void)
 {
+	// Установка русского языка
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
-	
+	// Объявление переменных и ввод значений
 	int a, b, c;
 	cout << "Введите значения сторон треугольника" << endl;
 	cin >> a >> b >> c;
-
+	// Создание треугольника
 	try
 	{
 		Triangle trg(a, b, c);
 		cout << "Площадь треугольника: " << trg.Square();
 	}
-	catch (Triangle::Ex ex)
+	catch (Triangle::ExScore ex)
 	{
 		cout << "Ошибка в" << ex.origin << endl;
 		cout << "Неверные значения " << ex.s1 <<
