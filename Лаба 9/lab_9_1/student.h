@@ -71,6 +71,13 @@ public:
 	 @return none
 	*/
 	~Student();
+	class ExScore //класс исключений
+	{
+	public:
+		string origin; //для имени функции
+		int iValue; //для хранения ошибочного значения
+		ExScore(string Or, int sc);
+	};
 private:
 	// Промежуточные оценки
 	int scores[5];

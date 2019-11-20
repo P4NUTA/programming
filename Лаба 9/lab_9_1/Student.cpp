@@ -61,9 +61,12 @@ std::string Student::get_last_name()
 void Student::set_scores(int scores[])
 {
 	for (int i = 0; i < 5; ++i) {
+		if (scores[i] > 5)
+			throw Student::ExScore("в функции set_scores()", scores[i]);
 		Student::scores[i] = scores[i];
 	}
 }
+
 /*
 Установка среднего балла
 
@@ -108,3 +111,8 @@ Student::~Student()
 {
 	Student::save();
 }
+Student::ExScore::ExScore(string Or, int sc)
+{
+	Student::ExScore::origin = Or; //строка с именем виновника ошибки
+	Student::ExScore::iValue = sc; //сохраненное неправильное значение
+};

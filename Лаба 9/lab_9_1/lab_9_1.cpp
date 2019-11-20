@@ -72,7 +72,16 @@ int main()
 	student02->set_name(name);
 	student02->set_last_name(last_name);
 	// Сохраняем промежуточные оценки в объект класса Student
-	student02->set_scores(scores);
+	try {
+		student02->set_scores(scores);
+	}
+	catch (Student::ExScore ex)
+	{
+		cout << "\nОшибка инициализации " << ex.origin;
+		cout << "\nВведенное значение оценки " << ex.iValue <<
+			" является недопустимым\n";
+	}
+
 	// Считаем средний балл
 	float average_score = sum / 5.0;
 	// Сохраняем средний балл в объект класса Student

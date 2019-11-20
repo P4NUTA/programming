@@ -20,7 +20,7 @@ public:
 	/* Получение имени студента
 
 	@param none
-	@return none
+	@return string name - student's name 
 	*/
 	string get_name()
 	{
@@ -37,7 +37,7 @@ public:
 	}
 	/* Получение фамилии студента
 
-	@return string
+	@return string last_name - student's last name
 	*/
 	string get_last_name()
 	{
@@ -65,8 +65,7 @@ public:
 	}
 	/* Получение среднего балла
 
-	@param none
-	@return none
+	@return double average_score - student's average score 
 	*/
 	double get_average_score()
 	{
