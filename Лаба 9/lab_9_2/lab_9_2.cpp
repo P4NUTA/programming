@@ -64,7 +64,7 @@ public:
 
 private:
 	/*
-	Sides of triangel
+	Стороны треугольника
 	*/
 	int s1;
 	int s2;
