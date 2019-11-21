@@ -1,20 +1,47 @@
-﻿// lab_10_2.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
-//
-
+﻿#include "dot.h"
+#include <math.h>
 #include <iostream>
+#include <Windows.h>
+using namespace std;
 
-int main()
+class Triangle
 {
-    std::cout << "Hello World!\n";
-}
+public:
+	Triangle(Dot a, Dot b, Dot c) {
+		d1 = a;
+		d2 = b;
+		d3 = c;
+		//Perimetr = d1.distanceTo(d2) + d1.distanceTo(d3) + d2.distanceTo(d3);
 
-// Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
-// Отладка программы: F5 или меню "Отладка" > "Запустить отладку"
+	}
+	double Perimeter() {
+		Perimetr = d1.distanceTo(d2) + d1.distanceTo(d3) + d2.distanceTo(d3);
+		return Perimetr;
+	}
+	double Squar() {
+		double halfper = Perimetr/2;
+		Square = halfper * (halfper - d1.distanceTo(d2)) * ((halfper - d1.distanceTo(d3)) * (halfper - d2.distanceTo(d3)));
+			return Square;
+	}
+private:
+	double Perimetr;
+	double Square;
+	Dot d1;
+	Dot d2;
+	Dot d3;
 
-// Советы по началу работы 
-//   1. В окне обозревателя решений можно добавлять файлы и управлять ими.
-//   2. В окне Team Explorer можно подключиться к системе управления версиями.
-//   3. В окне "Выходные данные" можно просматривать выходные данные сборки и другие сообщения.
-//   4. В окне "Список ошибок" можно просматривать ошибки.
-//   5. Последовательно выберите пункты меню "Проект" > "Добавить новый элемент", чтобы создать файлы кода, или "Проект" > "Добавить существующий элемент", чтобы добавить в проект существующие файлы кода.
-//   6. Чтобы снова открыть этот проект позже, выберите пункты меню "Файл" > "Открыть" > "Проект" и выберите SLN-файл.
+};
+
+int main() {
+	SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
+	Dot a(3, 2);
+	Dot b(5, 6);
+	Dot c(7, 1);
+	Triangle trg(a, b, c);
+	double perim = trg.Perimeter();
+	double sqr = trg.Squar();
+	cout << "Периметр треугольника: " << perim << endl;
+	cout << "Площадь треугольника: " << sqr << endl;
+	return 0;
+};

@@ -151,7 +151,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="dot.cpp" />
     <ClCompile Include="lab_10_2.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="dot.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
