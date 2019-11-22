@@ -1,4 +1,10 @@
-﻿#include <iostream>
+﻿/* Создать структуру employee
+	
+	int ID;
+	int Value;
+	ввести данные и вывести
+*/
+#include <iostream>
 #include <Windows.h>
 using namespace std;
 
