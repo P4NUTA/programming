@@ -1,11 +1,7 @@
-﻿/* Создать структуру employee
-
-	int ID;
-	int Value;
-	ввести данные и вывести
-*/
-#include <iostream>
+﻿#include <iostream>
 #include <Windows.h>
+#include <fstream>
+#include <string>
 using namespace std;
 
 struct employee {
@@ -42,6 +38,9 @@ public:
 	void show() {
 		cout << "ID: " << ID << " Value: " << value << endl;
 	}
+	void filewrite(ofstream& lout) {
+		lout << "ID: " << ID << " Value: " << value << endl;
+	}
 private:
 	int ID; // employee's ID
 	float value; // employee's value
@@ -52,13 +51,24 @@ int main()
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
 	// Объявление структур
-	employee em1(1, 20);
-	employee em2;
+	employee em1;
+	employee em2(1,20);
 	// Объявление переменных
 	int a, b;
 	cout << "Введите данные о сотрудниках" << endl;
 	cout << "третий: ";
 	cin >> a >> b;
 	employee em3(a, b);
+	// Открыть файл для записи данных сотрудников
+	// Открытие файла
+	ofstream file_("text.txt");
+	if (!file_) {
+		cout << "error" << endl;
+	}
+	em1.filewrite(file_);
+	em2.filewrite(file_);
+	em3.filewrite(file_);
+	file_.close();
+
 	return 0;
 }
