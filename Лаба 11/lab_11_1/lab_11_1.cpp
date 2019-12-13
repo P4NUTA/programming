@@ -33,15 +33,14 @@ public:
 	}
 	Distance operator+ (Distance) const;
 	Distance operator- (Distance) const;
+
 	operator float() const
 	{
 		float fracfeet = inches / 12;
 		fracfeet += static_cast<float>(feet);
 		return fracfeet / MTF;
 	}
-
 };
-
 
 int main()
 {
@@ -50,8 +49,8 @@ int main()
 	//Distance dist1, dist2, dist3, dist4;
 	//dist1.getdist();
 	//dist2.getdist();
-	//dist3 = dist1 + dist2;
-	//dist4 = dist1 + dist2 + dist3;
+	//dist3 = (dist1 + dist2);
+	//dist4 = (dist1 + dist2 + dist3);
 	//cout << "\ndist1 = ";
 	//dist1.showdist();
 	//cout << "\ndist2 = ";
@@ -61,7 +60,7 @@ int main()
 	//cout << "\ndist4 = ";
 	//dist4.showdist();
 
-	//dist3 = dist1 - dist2;
+	//dist3 = (dist1 - dist2);
 	//cout << "\ndist1 = ";
 	//dist1.showdist();
 	//cout << "\ndist2 = ";
@@ -78,7 +77,6 @@ int main()
 	mtrs = dist2;
 
 	cout << mtrs;
-
 	return 0;
 }
 
@@ -103,11 +101,5 @@ Distance Distance::operator- (Distance d2) const
 		f++;
 	}
 	return Distance(f, i);
+	
 }
-
-//Distance Distance::operatorfloat() const
-//{
-//	float fracfeet = inches / 12;
-//	fracfeet += static_cast<float>(feet);
-//	return fracfeet / MTF;
-//}
