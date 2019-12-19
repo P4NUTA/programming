@@ -12,7 +12,6 @@ int main()
 	SetConsoleOutputCP(1251);
 	SetConsoleCP(1251);
 
-
 	string name;
 	string last_name;
 	IdCard* idc = new IdCard(123456, "Базовый");
@@ -38,13 +37,13 @@ int main()
 
 	// Передача параметров конструктору
 	Student* student02 = new Student(name, last_name, idc);
-	Student student03("Петр", "Петров", idc2);
-	Student student04("Семен", "Смирнов", idc);
-	Student student05("Саша", "Коен", idc2);
-	Student student06("Дмитрий", "Ионов", idc);
+	Student* student03 = new Student("Петр", "Петров", idc2);
+	Student* student04 = new Student("Семен", "Смирнов", idc);
+	Student* student05 = new Student("Саша", "Коен", idc2);
+	Student* student06 = new Student("Дмитрий", "Ионов", idc);
 
 	Group gr1957("1957");
-	gr1957.addStudent(*student02);
+	gr1957.addStudent(student02);
 	gr1957.addStudent(student03);
 	gr1957.addStudent(student04);
 	gr1957.addStudent(student05);
