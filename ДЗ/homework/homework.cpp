@@ -3,7 +3,6 @@
 #include "human.h"
 #include "Client.h"
 #include <Windows.h>
-#pragma warning(disable: 4996)
 using namespace std;
 int main()
 {
